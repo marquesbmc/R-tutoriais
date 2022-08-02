@@ -77,3 +77,21 @@ usethis::use_git_config(user.name = "marquesbmc", # Seu nome
 
 usethis::create_github_token()
 usethis::edit_r_environ()
+
+usethis::create_from_github()
+
+
+##################### Identificação de genes
+
+
+library(ALL)
+data(ALL)
+dim(ALL)
+ALL
+
+s = which(as.character(ALL$mol.biol) %in% c("BCR/ABL", "NEG"))
+ALLs = ALL[, s]
+ALLs
+ALLs$mol.biol = factor(ALLs$mol.biol)
+ALLs$mol.biol
+table(ALLs$mol.biol )
